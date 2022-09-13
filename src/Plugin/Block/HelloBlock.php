@@ -19,10 +19,6 @@ class HelloBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    \Drupal::service('civicrm')->initialize();
-
-    \Civi::service('angularjs.loader')
-      ->addModules('afformMyForm'); // Todo: use variable for form name
 
     return [
       '#theme' => 'hello_block',

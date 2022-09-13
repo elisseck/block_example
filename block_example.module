@@ -12,3 +12,10 @@ function block_example_theme() {
     ],
   ];
 }
+
+function block_example_block_view_alter(array &$build, \Drupal\Core\Block\BlockPluginInterface $block) {
+  \Drupal::service('civicrm')->initialize();
+  \CRM_Core_Resources::singleton()->addCoreResources();
+  \Civi::service('angularjs.loader')
+    ->addModules('afformMyForm');
+}
